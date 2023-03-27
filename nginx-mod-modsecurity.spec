@@ -15,8 +15,6 @@ BuildRequires:  gcc
 BuildRequires:  nginx-mod-devel
 BuildRequires:  libmodsecurity-devel
 
-Suggest:        mod_security_crs
-
 %description
 %{summary}.
 
