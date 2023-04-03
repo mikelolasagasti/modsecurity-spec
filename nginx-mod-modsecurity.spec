@@ -40,17 +40,17 @@ install -dm 0755 %{buildroot}%{nginx_modconfdir}
 echo 'load_module "%{nginx_moddir}/ngx_http_modsecurity_module.so";' \
     > %{buildroot}%{nginx_modconfdir}/mod-modsecurity.conf
 popd
-install -dm 0755 %{buildroot}%{_sysconfdir}/nginx
-install -pm 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/nginx/modsecurity.conf
-install -pm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/nginx/unicode.mapping
+install -dm 0755 %{buildroot}%{_sysconfdir}/nginx/conf.d/
+install -pm 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/nginx/conf.d/modsecurity.conf
+install -pm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/nginx/conf.d/unicode.mapping
 
 %files
 %license LICENSE
 %doc README.md
 %{nginx_moddir}/ngx_http_modsecurity_module.so
 %{nginx_modconfdir}/mod-modsecurity.conf
-%config(noreplace) %{_sysconfdir}/nginx/modsecurity.conf
-%{_sysconfdir}/nginx/unicode.mapping
+%config(noreplace) %{_sysconfdir}/nginx/conf.d/modsecurity.conf
+%{_sysconfdir}/nginx/conf.d/unicode.mapping
 
 %changelog
 %autochangelog
