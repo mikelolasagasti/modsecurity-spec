@@ -8,13 +8,14 @@ Summary:        ModSecurity v3 nginx connector
 License:        Apache-2.0
 URL:            https://github.com/SpiderLabs/ModSecurity-nginx
 Source0:        %{url}/archive/v%{version}/%{origname}-%{version}.tar.gz
-Source1:        https://github.com/SpiderLabs/ModSecurity/blob/v3/master/modsecurity.conf-recommended
-Source2:        https://github.com/SpiderLabs/ModSecurity/blob/v3/master/unicode.mapping
+Source1:        https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/modsecurity.conf-recommended
+Source2:        https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/unicode.mapping
 
 
 BuildRequires:  gcc
 BuildRequires:  libmodsecurity-devel
 BuildRequires:  nginx-mod-devel
+Requires:       nginx-filesystem
 
 %description
 The ModSecurity-nginx connector is the connection point between nginx and
