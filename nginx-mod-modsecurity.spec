@@ -52,9 +52,9 @@ install -pm 0644 %{SOURCE3} %{buildroot}%{_sysconfdir}/nginx/nginx.conf.modsecur
 %doc README.md
 %{nginx_moddir}/ngx_http_modsecurity_module.so
 %{nginx_modconfdir}/mod-modsecurity.conf
-%config(noreplace) %{_sysconfdir}/nginx/conf.d/modsecurity.conf
-%{_sysconfdir}/nginx/conf.d/nginx.conf.modsecurity
-%{_sysconfdir}/nginx/conf.d/unicode.mapping
+%config(noreplace) %{_sysconfdir}/nginx/modsecurity.conf
+%{_sysconfdir}/nginx/nginx.conf.modsecurity
+%{_sysconfdir}/nginx/unicode.mapping
 
 %changelog
 %autochangelog
