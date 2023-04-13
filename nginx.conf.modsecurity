@@ -40,7 +40,7 @@ http {
         server_name  _;
         root         /usr/share/nginx/html;
         
-       	# Enable ModSecurity WAF, if need
+        # Enable ModSecurity WAF, if need
         #modsecurity on;
         # Load ModSecurity CRS, if need
         #modsecurity_rules_file /etc/nginx/modsecurity.conf;
