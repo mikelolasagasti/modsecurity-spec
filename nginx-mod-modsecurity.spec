@@ -10,6 +10,7 @@ URL:            https://github.com/SpiderLabs/ModSecurity-nginx
 Source0:        %{url}/archive/v%{version}/%{origname}-%{version}.tar.gz
 Source1:        https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/modsecurity.conf-recommended
 Source2:        https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/unicode.mapping
+Source2:        nginx.conf.modsecurity
 
 
 BuildRequires:  gcc
@@ -42,8 +43,9 @@ echo 'load_module "%{nginx_moddir}/ngx_http_modsecurity_module.so";' \
     > %{buildroot}%{nginx_modconfdir}/mod-modsecurity.conf
 popd
 install -dm 0755 %{buildroot}%{_sysconfdir}/nginx/conf.d/
-install -pm 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/nginx/conf.d/modsecurity.conf
-install -pm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/nginx/conf.d/unicode.mapping
+install -pm 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}/nginx/modsecurity.conf
+install -pm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/nginx/unicode.mapping
+install -pm 0644 %{SOURCE3} %{buildroot}%{_sysconfdir}/nginx/nginx.conf.modsecurity
 
 %files
 %license LICENSE
@@ -51,6 +53,7 @@ install -pm 0644 %{SOURCE2} %{buildroot}%{_sysconfdir}/nginx/conf.d/unicode.mapp
 %{nginx_moddir}/ngx_http_modsecurity_module.so
 %{nginx_modconfdir}/mod-modsecurity.conf
 %config(noreplace) %{_sysconfdir}/nginx/conf.d/modsecurity.conf
+%{_sysconfdir}/nginx/conf.d/nginx.conf.modsecurity
 %{_sysconfdir}/nginx/conf.d/unicode.mapping
 
 %changelog
