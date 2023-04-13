@@ -10,7 +10,7 @@ URL:            https://github.com/SpiderLabs/ModSecurity-nginx
 Source0:        %{url}/archive/v%{version}/%{origname}-%{version}.tar.gz
 Source1:        https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/modsecurity.conf-recommended
 Source2:        https://raw.githubusercontent.com/SpiderLabs/ModSecurity/v3/master/unicode.mapping
-Source2:        nginx.conf.modsecurity
+Source3:        nginx.conf.modsecurity
 
 
 BuildRequires:  gcc
